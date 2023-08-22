@@ -29,7 +29,7 @@ node('python') {
 
     stage('Deploy') {
         sh("cat docker-compose.yml")
-        sh ("docker-compose up")
+        sh ("docker-compose --env-file .env up")
     }
 
    stage('Remove old images') {
