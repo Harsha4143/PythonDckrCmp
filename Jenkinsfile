@@ -1,5 +1,5 @@
 node('python') {
-    def application = "pythonapp"
+    def application = "pythondckrcmp"
     def dockerhubaccountid = "harsha4143"
     stage('Clone repository') {
         checkout scm
@@ -15,7 +15,7 @@ node('python') {
 }
 
     stage('Build image') {
-        app = docker.build("${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+        app = docker.build("-f docker-compose.yml .")
     }
 
    
