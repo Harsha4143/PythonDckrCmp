@@ -28,7 +28,7 @@ node('python') {
     }
 
     stage('Deploy') {
-        sh ("docker-compose up .")
+        sh ("docker-compose up")
     }
 
    stage('Remove old images') {
