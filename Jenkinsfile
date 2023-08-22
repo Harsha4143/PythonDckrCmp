@@ -15,7 +15,7 @@ node('python') {
 }
 
     stage('Build image') {
-        app = docker.build("","docker-compose.yml")
+        app = docker.build("${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
     }
 
    
@@ -28,7 +28,7 @@ node('python') {
     }
 
     stage('Deploy') {
-        sh ("docker run -d -p 3333:3333 ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+        sh ("docker-compose up .")
     }
 
    stage('Remove old images') {
