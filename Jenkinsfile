@@ -15,7 +15,7 @@ node('python') {
 }
 
     stage('Build image') {
-        app = docker.build("-f docker-compose.yml .")
+        app = docker.build("","-f docker-compose.yml .")
     }
 
    
