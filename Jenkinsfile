@@ -28,7 +28,7 @@ node('python') {
     }
 
     stage('Deploy') {
-        sh("cat myapp.env")
+        sh("cat docker-compose.yml")
         sh ("docker-compose up")
     }
 
