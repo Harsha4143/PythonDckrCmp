@@ -3,5 +3,5 @@ services:
   myapp:
     ports:
       - "3333:3333"
-    env_file: myapp.env
+    env_file: .env
     image: '${ACC}/${APP}:${BUILD_NUMBER}'
