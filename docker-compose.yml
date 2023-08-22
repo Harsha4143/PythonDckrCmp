@@ -1,9 +1,7 @@
 version: '3'
 services:
-  '${application}':
-    build:
-      context: .
-      dockerfile: Dockerfile
+  '${APP}':
     ports:
       - "3333:3333"
-    image: '${dockerhubaccountid}/${application}:${BUILD_NUMBER}'
+    env_file: ./myapp.env
+    image: '${ACC}/${APP}:${BUILD_NUMBER}'
